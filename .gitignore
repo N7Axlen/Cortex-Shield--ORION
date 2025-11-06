@@ -1,0 +1,132 @@
+# Cortex Shield - Git Ignore File
+
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# API Keys
+**/api-keys.txt
+**/secrets.txt
+
+# Node Modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs
+lib-cov/
+coverage/
+.nyc_output/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn files
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Testing
+.coverage/
+*.lcov
+.hypothesis/
+.pytest_cache/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Optional files
+.vercel
+.netlify
+.serverless/
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Documentation (optional - comment out if you want to track these)
+# docs/_build/
+# site/
+
+# Local development
+.local/
+local/
+
+# Certificate files
+*.pem
+*.key
+*.crt
+*.cert
+
+# Production configs (if different from .env)
+config.production.js
+config.local.js

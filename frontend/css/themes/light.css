@@ -1,0 +1,49 @@
+/* ============================================
+   LIGHT THEME - Clean & Bright
+   ============================================ */
+
+:root {
+  /* Light Theme Palette */
+  --primary: #4f46e5;        /* Indigo-600 */
+  --secondary: #7c3aed;      /* Purple-600 */
+  --accent: #db2777;         /* Pink-600 */
+  --highlight: #0d9488;      /* Teal-600 */
+  --tertiary: #d97706;       /* Amber-600 */
+  --success: #059669;        /* Green-600 */
+  
+  /* Backgrounds - Light & Clean */
+  --bg-primary: #f8fafc;     /* Slate-50 */
+  --bg-secondary: #f1f5f9;   /* Slate-100 */
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: rgba(255, 255, 255, 1);
+  
+  /* Text Colors - Dark for readability */
+  --text-primary: #0f172a;   /* Slate-900 */
+  --text-secondary: #334155; /* Slate-700 */
+  --text-muted: #64748b;     /* Slate-500 */
+  
+  /* Borders & Shadows */
+  --border: rgba(79, 70, 229, 0.15);
+  --border-focus: rgba(79, 70, 229, 0.5);
+  --border-glow: rgba(79, 70, 229, 0.3);
+  
+  /* Lighter Shadows */
+  --shadow-glow-primary: 
+    0 0 20px rgba(79, 70, 229, 0.15),
+    0 0 40px rgba(79, 70, 229, 0.08);
+  --shadow-glow-secondary: 
+    0 0 15px rgba(124, 58, 237, 0.15),
+    0 0 30px rgba(124, 58, 237, 0.08);
+  --shadow-glow-accent: 
+    0 0 15px rgba(219, 39, 119, 0.15),
+    0 0 30px rgba(219, 39, 119, 0.08);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(79, 70, 229, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(219, 39, 119, 0.03) 0%, transparent 50%);
+}

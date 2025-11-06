@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cortex Shield - AI-Powered Security Toolkit with Advanced Threat Detection">
+    <meta name="theme-color" content="#00d9ff">
+    <title>Cortex Shield - Advanced Threat Detection</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Theme Stylesheet (dynamically loaded) -->
+    <link rel="stylesheet" href="css/themes/default.css" id="theme-stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased">
+    <!-- Aurora Background Effect -->
+    <div class="aurora-bg"></div>
+    
+    <!-- 3D Background Container -->
+    <div id="three-container" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></div>
+    
+    <!-- Enhanced Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-[#1a0f2e] via-[#2d1b3d] to-[#1a0f2e] z-50 flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <!-- Animated Shield Icon with Glow -->
+            <div class="relative w-24 h-24 mx-auto mb-8 float-animation">
+                <!-- Inner Shield Icon -->
+                <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-[#ff6b35] animate-pulse glow-primary" 
+                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="M12 8v4"></path>
+                    <path d="M12 16h.01"></path>
+                </svg>
+                
+                <!-- Rotating Ring 1 -->
+                <div class="absolute inset-0 border-4 border-transparent border-t-[#ff6b35] border-r-[#f7931e] rounded-full animate-spin" style="animation-duration: 1.5s;"></div>
+                
+                <!-- Rotating Ring 2 (opposite direction) -->
+                <div class="absolute inset-2 border-4 border-transparent border-b-[#ffd93d] border-l-[#ff9a76] rounded-full" style="animation: spin 2s linear infinite reverse;"></div>
+                
+                <!-- Outer Glow Ring -->
+                <div class="absolute -inset-3 border-2 border-[#ff6b35]/10 rounded-full loading-pulse"></div>
+            </div>
+            
+            <!-- Brand Name with Gradient -->
+            <h2 class="font-display text-4xl font-bold mb-3 gradient-text shimmer">
+                Cortex Shield
+            </h2>
+            
+            <!-- Tagline -->
+            <p class="text-base text-[#d4a5a5] mb-6 animate-pulse">AI-Powered Security Toolkit</p>
+            
+            <!-- Loading Progress Bar -->
+            <div class="w-64 h-1.5 bg-[#2d1b3d] rounded-full overflow-hidden mx-auto mb-4">
+                <div class="h-full bg-gradient-to-r from-[#ff6b35] via-[#f7931e] to-[#ffd93d] rounded-full animate-pulse" 
+                     style="width: 100%; animation: loadingBar 1.5s ease-in-out infinite;"></div>
+            </div>
+            
+            <!-- Status Text -->
+            <p class="text-xs text-[#a389a3] font-mono">
+                <span class="inline-block animate-pulse">●</span> Initializing security modules...
+            </p>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="app" class="opacity-0 transition-opacity duration-500">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+    
+    <style>
+        @keyframes loadingBar {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(0%); }
+        }
+    </style>
+
+    <!-- Three.js CDN -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Axios for API calls -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <!-- Main Application Scripts -->
+    <script src="js/config.js"></script>
+    <script type="module" src="js/three-scene.js"></script> 
+    <script src="js/api.js"></script>
+    <script src="js/modules.js"></script>
+    <script src="js/landing.js"></script>
+    <script src="js/ui-new.js"></script>
+    <script type="module" src="js/app.js"></script>
+    
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').classList.add('opacity-0');
+                setTimeout(() => {
+                    document.getElementById('loading-screen').style.display = 'none';
+                    document.getElementById('app').classList.remove('opacity-0');
+                    lucide.createIcons();
+                }, 500);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
